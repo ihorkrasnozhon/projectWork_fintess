@@ -24,6 +24,8 @@ const ExerciseSelector = () => {
                     navigate('/exercise/arm-bend-video');
                 } else if (exercise === 'squat_video') {
                     navigate('/exercise/squat-video');
+                } else if (exercise === 'pushups_video') {
+                    navigate('/exercise/pushups-video');
                 }
             })
             .catch((err) => {
@@ -42,6 +44,8 @@ const ExerciseSelector = () => {
 
             <button onClick={() => startExercise('armbend_video')}>Start Arm Bend (Видео)</button>
             <button onClick={() => startExercise('squat_video')}>Start Squat (Видео)</button>
+            <button onClick={() => startExercise('pushups_video')}>Start Push Ups (Видео)</button>
+
 
             <p>{status}</p>
         </div>

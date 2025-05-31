@@ -63,10 +63,12 @@ def gen_frames_squat_video(video_path):
 
                     if angle is not None:
                         if angle > 160:
-                            stage = "up"
-                        if angle < 90 and stage == "up":
-                            stage = "down"
-                            counter += 1
+                            if stage == "down":
+                                stage = "up"
+                                counter += 1
+                        elif angle < 90:
+                            if stage == "up" or stage is None:
+                                stage = "down"
 
                         hip_px = (int(hip[0] * w), int(hip[1] * h))
                         knee_px = (int(knee[0] * w), int(knee[1] * h))

@@ -7,7 +7,8 @@ import SquatPage from "../Squat/SquatPage";
 import ArmBendVideoPage from "../ArmBending/ArmBendVideoPage"; // добавляем
 import SquatVideoPage from "../Squat/SquatVideoPage";           // добавляем
 import Header from "../Header/Header";
-import PushUpsPage from "../PushUps/PushUpsPsge";
+import PushUpsPage from "../PushUps/PushUpsPage";
+import PushUpsVideoPage from "../PushUps/PushUpsVideoPage"
 
 const App = () => {
     return (
@@ -21,6 +22,8 @@ const App = () => {
 
                 <Route path="/exercise/arm-bend-video" element={<ArmBendVideoPage />} /> {/* добавляем */}
                 <Route path="/exercise/squat-video" element={<SquatVideoPage />} /> {/* добавляем */}
+                <Route path="/exercise/pushups-video" element={<PushUpsVideoPage />} /> {/* добавляем */}
+
             </Routes>
         </Router>
     );

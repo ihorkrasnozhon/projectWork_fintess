@@ -10,6 +10,9 @@ from src.Backend.armBending import gen_frames_armbending
 from src.Backend.pushUps import gen_frames_pushups
 from src.Backend.squat import gen_frames_squat
 
+from src.Backend.squatVideo import gen_frames_squat_video  # Импортируем новую функцию
+
+
 
 
 app = Flask(__name__)
@@ -104,6 +107,9 @@ def video_feed_video():
                         mimetype='multipart/x-mixed-replace; boundary=frame')
     elif exercise == 'squats':
         return Response(gen_frames_squat(source='video', video_path=full_path),
+                        mimetype='multipart/x-mixed-replace; boundary=frame')
+    elif exercise == 'squat_counter':  # Новый кейс
+        return Response(gen_frames_squat_video(full_path),
                         mimetype='multipart/x-mixed-replace; boundary=frame')
     else:
         return "Exercise not supported", 400
