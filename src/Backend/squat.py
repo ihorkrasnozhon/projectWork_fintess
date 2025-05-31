@@ -22,7 +22,7 @@ def calculate_angle(a, b, c):
     return angle
 
 # Генерация кадров с камеры
-def gen_frames():
+def gen_frames_squat(source='camera', video_path=None):
     global counter, stage
     cap = cv2.VideoCapture(0)
 
@@ -92,7 +92,7 @@ def index():
 # Видео поток
 @app.route('/video_feed')
 def video_feed():
-    return Response(gen_frames(),
+    return Response(gen_frames_squat(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
