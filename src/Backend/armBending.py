@@ -121,6 +121,9 @@ def gen_frames_armbending(source='camera', video_path=None):
         if not camera_state.cap or not camera_state.cap.isOpened():
             break  # Если камера не открыта, выходим из цикла
 
+
+
+
         success, frame = camera_state.cap.read()
         if not success:
             # если видео закончилось — вернуться в начало
